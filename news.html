@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/sideBar.css">
+    <link rel="stylesheet" href="./styles/news.css">
+  </head>
+
+  <body>
+    <!--DO NOT CHANGE THIS ID's-->
+
+    <div id="container">
+      <div id="sidebar">
+        <!--add your sidebar component here-->
+      </div>
+
+      <div id="main">
+        <!--DO NOT CHANGE THIS ID's-->
+        <!--Show the clicked article in detailed format here ONLY-->
+      </div>
+    </div>
+  </body>
+</html>
+<script type="module">
+  import {sideb} from "./components/sidebar.js";
+  import {apiCall, appendArticles } from "./scripts/main.js"
+  let sideB = sideb;
+  document.querySelector("#sidebar").innerHTML = sideB()
+  let mainData = JSON.parse(localStorage.getItem("article"))
+  console.log(mainData)
+  let mainArr = [];
+  mainArr.push(mainData);
+  let main = document.querySelector("#main")
+  appendArticles(mainArr,main)
+  document.querySelector("#home").addEventListener("click",()=>{
+    location.href="index.html";
+  })
+
+  document.querySelector("#searchbar").addEventListener("keypress",(elem)=>{
+    if(elem["key"] == "Enter"){
+      let searchWord = document.querySelector("#searchbar").value
+      if(searchWord == "cricket" || searchWord == "Cricket" ||searchWord == "CRICKET"){
+        localStorage.setItem("searchWord",searchWord)
+        location.href ="search.html"
+      }
+      else {
+        alert("Key Not found");
+      }
+    }
+  })
+</script>

@@ -1,0 +1,21 @@
+#container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5%;
+    margin-top: 50px;
+  }
+  
+  #main{
+    width: 80%;
+    margin: auto;
+  }
+  #mainDiv{
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    background-color: aliceblue;
+  }
+  #mainDiv>img{
+    width: 100%;
+  }

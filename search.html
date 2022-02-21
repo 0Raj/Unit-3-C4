@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body{
+        margin: 0px;
+        background-color: bisque;
+      }
+      #main{
+        width: 70%;
+        height: 100%;
+        display: grid;
+        margin: auto;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(7,240px);
+        gap:10px;
+        
+      }
+      #mainDiv{
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        text-align: center;
+        background-color: aliceblue;
+        cursor: pointer;
+      }
+      #mainDiv>img{
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <!--No need to add sidebar here, directly display search results here only-->
+
+      <!-- show headline, description and image -->
+    </div>
+  </body>
+</html>
+<script type="module">
+import {apiCall, appendArticles } from "./scripts/main.js";
+import {storeSearchterm} from "./scripts/search.js";
+
+let term = localStorage.getItem("searchWord");
+let searchData = await storeSearchterm(term)
+let main = document.querySelector("#main")
+appendArticles(searchData,main);
+</script>

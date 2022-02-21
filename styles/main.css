@@ -1,0 +1,27 @@
+#container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5%;
+    margin-top: 50px;
+  }
+  
+  #main{
+    width: 83%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(7,340px);
+    gap:10px;
+    
+  }
+  #mainDiv{
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    background-color: aliceblue;
+    cursor: pointer;
+  }
+  #mainDiv>img{
+    width: 100%;
+  }
